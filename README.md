@@ -5,10 +5,10 @@ Specifications
 2. Editor used: Visual Studio Code
 
 After cloning the repository please do the following
-  Server setup:
+  # Server setup:
   a)  go to server folder of the repository and run 'npm install' to install the dependencies
   b)  run 'npm start' to start the server
- Client setup:
+ # Client setup:
   a) go to client folder of the repository in another terminal and run 'npm install' to install the dependencies
   b) run 'npm start' to start the client
   
