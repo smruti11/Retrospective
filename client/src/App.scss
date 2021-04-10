@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+$font_family:'Open Sans', sans-serif;
+$well:#f2bb5c;
+$improve:#66d9ee;
+$done:#57ecc0;
+$action:#dd7ddd;
+body{
+  background-color: #c4bcbc !important;
+  font-family: 'Josefin Sans', cursive;
+  padding-top: 5rem;
+}
+.postContainer{
+    border-radius: 10px;
+    border:10px solid #565353;
+}
+.categoryContainer{
+  background-color: #fff;
+}
+.pointer{
+  cursor: pointer;
+}
+.minHeight{
+  min-height: 10rem;
+}
+/*common elements design */
+textarea.form-control{
+  background-color: transparent !important;
+  border: none;
+  font-size: 0.8rem;
+}
+textarea.form-control:focus{
+  box-shadow: none;
+}
+.btn{
+  padding: 0 !important;
+}
+p{
+  font-size: 0.8rem;
+}
+/*common elements design end */
+/*card body design*/
+.card{
+  border-radius: unset !important;
+  border-bottom-right-radius: 0.5rem !important;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.16), 3px 0 3px rgba(0,0,0,0.40);
+}
+.col-md-4{
+  padding-right: 3px !important;
+  padding-left: 3px !important;
+}
+.card-body{
+  padding-top:0.2rem !important;
+  height: 5rem;
+  overflow-y:auto;
+}
+.card-footer{
+  background-color: transparent !important;
+  border-top: none !important;
+  padding: 0 0.25rem !important;
+  text-align: left;
+}
+.bg-well {
+  background-color: $well!important;
+}
+.bg-improve{
+  background-color: $improve!important;
+}
+.bg-done{
+  background-color: $done!important;
+}
+.bg-action{
+  background-color: $action!important;
+}
+/*card body design end*/
+/* modal design*/
+.well .modal-content{
+  @extend .bg-well;
+}
+.improve .modal-content{
+  @extend .bg-improve;
+}
+.done .modal-content{
+  @extend .bg-done;
+}
+.action .modal-content{
+  @extend .bg-action;
+}
+.btn-edit{
+  background-color: #fff !important;
+  border:none !important;
+  height: 1.8rem;
+  width: 2rem;
+  padding:none !important;
+}
+.btn.focus, .btn:focus, .btn-primary.focus, .btn-primary:focus{
+  box-shadow: none !important;
+}
+.btn-well{
+  background-color: rgba(red($well), green($well), blue($well), 0.2) !important;
+  color:#000 !important;
+  border:none !important;
+  line-height: 1.8rem;
+}
+.btn-improve{
+  background-color: rgba(red($improve), green($improve), blue($improve), 0.2) !important;
+  color:#000 !important;
+  border:none !important;
+  line-height: 1.8rem;
+}
+.btn-done{
+  background-color: rgba(red($done), green($done), blue($done), 0.2) !important;
+  color:#000 !important;
+  border:none !important;
+  line-height: 1.8rem;
+}
+.btn-action{
+  background-color: rgba(red($action), green($action), blue($action), 0.2) !important;
+  color:#000 !important;
+  border:none !important;
+  line-height: 1.8rem;
+}
+.modal-backdrop{
+  background-color: #fff;
+}
+.modal-footer{
+  padding-top: none !important;
+  border-top: none !important;
+}
+.modal-body{
+  padding-bottom: none !important;
+}
+.modal-content{
+  @extend .card;
+}
+/*modal design end*/
+/*navbar design*/
+.nav-item.dropdown{
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.008);
+  border-radius: 2px;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0,0,0,0.8);
+}
+.bg-background {
+  background-color: #c4bcbc!important;
+}
+.dropdown-toggle{
+  @extend .bg-background;
+}
+.dropdown-toggle.btn{
+  color:black;
+}
+.dropdown-toggle.btn.btn-prmary{
+  border:none;
+  border-color:none;
+  color:black;
+}
+/*navbar design end*/
