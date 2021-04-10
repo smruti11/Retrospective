@@ -12,7 +12,7 @@ After cloning the repository please do the following
   1. go to client folder of the repository in another terminal and run 'npm install' to install the dependencies
   2. run 'npm start' to start the client.
   
-  The retrospective project has four sections
+  The retrospective project has four sections.
   User has the ability to create, update, like & delete texts in each section
   User can also show/hide different sections.
   
