@@ -20,7 +20,7 @@ export const CustomDropdown = React.forwardRef(({update,selectedOptions},ref) =>
      }, [selectedOptions])
      const handleMultiple = (optionClicked) =>{
         optionClicked.checked = !optionClicked.checked;
-        console.log(optionClicked)
+        // console.log(optionClicked)
         var replace =categories;
         var all = categories.find(obj=>(obj.value==typeAll.value));
   
@@ -51,7 +51,7 @@ export const CustomDropdown = React.forwardRef(({update,selectedOptions},ref) =>
         selected.forEach(obj=>{
             delete obj.checked;
         })
-        console.log(selected);
+        // console.log(selected);
         update(selected);
       }
     return (

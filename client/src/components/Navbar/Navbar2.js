@@ -42,7 +42,7 @@ function Navigation() {
 
     const handleMultiple = (optionClicked) =>{
       optionClicked.checked = !optionClicked.checked;
-      console.log(optionClicked)
+      // console.log(optionClicked)
       var replace =categories;
       var all = categories.find(obj=>(obj.value==typeAll.value));
 
