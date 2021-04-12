@@ -8,7 +8,6 @@ function Category({label,posts}) {
     const [newPost, setNewPost] = useState(false);
     const navigate = useContext(NavigationContext);
     const [allPosts, setAllPosts] = useState(posts);
-
     useEffect(() => {
         setAllPosts(posts);
     }, [posts])
