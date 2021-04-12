@@ -37,8 +37,8 @@ function Category({label,posts}) {
                 <Row className="justify-content-center">
                     <h5>{label}</h5>
                     <sup>
-                        <Button onClick={updateNewPost} variant="link">
-                            <PlusCircle className="d-block"></PlusCircle>
+                        <Button onClick={updateNewPost} className="circle" variant="success">
+                            <PlusCircle className="d-block pointer"></PlusCircle>
                         </Button>
                     </sup>
                 </Row>

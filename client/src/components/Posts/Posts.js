@@ -24,7 +24,6 @@ const Posts = () => {
 
   const [currentCategory, setCurrentCategory] = useState(categories);
   // var currentCategory =categories;
-  var check = useShowHideSection(navigate.section);
   // set navigate
   useEffect(() => {
     var types=navigate.section

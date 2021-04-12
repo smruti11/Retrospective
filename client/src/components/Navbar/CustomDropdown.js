@@ -60,7 +60,7 @@ export const CustomDropdown = React.forwardRef(({update,selectedOptions},ref) =>
         {selectedOptions.length>4?'View All':`${selectedOptions.length} Selected`}
         </Dropdown.Toggle>
 
-        <Dropdown.Menu menuAlign="right" >
+        <Dropdown.Menu >
             {
             categories.map((opt,idx)=>
             <Form as={CustomItem} onCheck={handleMultiple} 
