@@ -13,10 +13,14 @@ function Category({label,posts}) {
         setAllPosts(posts);
     }, [posts])
     useEffect(() => {
-        if(navigate.sorting!==""){
-            posts.sort(compare);
-            setAllPosts(JSON.parse(JSON.stringify(posts)));
-        }
+        // if(navigate.sorting!==""){
+        //     posts.sort(compare);
+        //     setAllPosts(JSON.parse(JSON.stringify(posts)));
+        // }
+        var arr = Object.assign([],posts);
+        if(navigate.sorting!=="")
+        arr.sort(compare);
+        setAllPosts(arr);
     }, [navigate.sorting])
     function compare( a, b ) {
         if ( a[navigate.sorting]>b[navigate.sorting] ){
