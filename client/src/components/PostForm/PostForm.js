@@ -10,9 +10,8 @@ import {CategoryContext} from '../../context/categoryContext';
 
 const PostForm = ({setNewPost}) => {
   const type = useContext(CategoryContext)
-  const [postData, setPostData] = useState({ text: '',category:type });
+  const [postData, setPostData] = useState({ text: '',category:type,createdAt:new Date().getTime() });
   const dispatch = useDispatch();
- // const ref = useRef(); 
   const inputRef = useRef();
   useEffect(() => {
     inputRef.current.focus();

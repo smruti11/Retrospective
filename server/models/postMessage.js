@@ -8,8 +8,8 @@ const postSchema = mongoose.Schema({
         default: 0,
     },
     createdAt: {
-        type: String,
-        default: new Date().getTime(),
+        type: Number
+       // default: new Date().getTime(),
     },
 })
 
