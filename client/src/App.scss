@@ -148,15 +148,19 @@ p{
 .bg-background {
   background-color: #c4bcbc!important;
 }
-.dropdown-toggle{
-  @extend .bg-background;
-}
-.dropdown-toggle.btn{
-  color:black;
-}
-.dropdown-toggle.btn.btn-prmary{
-  border:none;
-  border-color:none;
-  color:black;
+// .dropdown-toggle{
+//   @extend .bg-background;
+// }
+// .dropdown-toggle.btn{
+//   color:black;
+// }
+// .dropdown-toggle.btn.btn-prmary{
+//   border:none;
+//   border-color:none;
+//   color:black;
+// }
+.btn-navigate{
+  background-color: #fff !important;
+  font-size: 0.8rem;
 }
 /*navbar design end*/

@@ -55,30 +55,32 @@ export const CustomDropdown = React.forwardRef(({update,selectedOptions},ref) =>
         update(selected);
       }
     return (
-        <Dropdown >
-        <Dropdown.Toggle as="a" role="button" className="nav-link" id="dropdown-basic">
-        {selectedOptions.length>4?'View All':`${selectedOptions.length} Selected`}
-        </Dropdown.Toggle>
+        // <Dropdown >
+        // <Dropdown.Toggle as="a" role="button" className="nav-link" id="dropdown-basic">
+        // {selectedOptions.length>4?'View All':`${selectedOptions.length} Selected`}
+        // </Dropdown.Toggle>
 
-        <Dropdown.Menu >
-            {
-            categories.map((opt,idx)=>
-            <Form as={CustomItem} onCheck={handleMultiple} 
-            key={opt.value} eventKey={idx}>{opt}</Form>)
-            }
-        </Dropdown.Menu>
-        </Dropdown>
-        // <DropdownButton 
-        // menuAlign="right"
-        // title={selectedOptions.length>4?'View All':`${selectedOptions.length} Selected`}
-        // id="dropdown-menu-align-right"
-        // >
-        // {
+        // <Dropdown.Menu >
+        //     {
         //     categories.map((opt,idx)=>
-        //     <Form as={CustomItem} onCheck={handleMultiple} key={opt.value} eventKey={idx}>{opt}</Form>)
-        // }
+        //     <Form as={CustomItem} onCheck={handleMultiple} 
+        //     key={opt.value} eventKey={idx}>{opt}</Form>)
+        //     }
+        // </Dropdown.Menu>
+        // </Dropdown>
 
-        // </DropdownButton>
+
+         <DropdownButton  variant="navigate"
+        menuAlign="right"
+        title={selectedOptions.length>4?'View All':`${selectedOptions.length} Selected`}
+        id="dropdown-menu-align-right"
+        >
+        {
+            categories.map((opt,idx)=>
+            <Form as={CustomItem} onCheck={handleMultiple} key={opt.value} eventKey={idx}>{opt}</Form>)
+        }
+
+        </DropdownButton>
     )
 })
 

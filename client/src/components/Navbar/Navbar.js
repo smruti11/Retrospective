@@ -1,11 +1,11 @@
 import React,{useContext,useState, useEffect} from 'react';
-import { Container, Navbar,Nav,NavDropdown, Dropdown } from 'react-bootstrap';
+import { Container, Navbar,Nav,NavDropdown, Dropdown, DropdownButton } from 'react-bootstrap';
 import { typeWell, typeImprove, typeDone, typeAction,typeAll } from '../../constants/categoryTypes';
 import {NavigationContext} from '../../context/naviagtionContext';
 import {CustomDropdown} from './CustomDropdown';
 function Navigation() {
     const navigate = useContext(NavigationContext);
-    const sortOptions = [{label:"Default",value:""},{label:"Creation Time",value:"createdAt"}]
+    const sortOptions = [{label:"Default",value:""},{label:"CreatedAt",value:"createdAt"}]
 
     const [sortHeader, setSortHeader] = useState('');
     //called when sorting parameter changes
@@ -47,13 +47,26 @@ function Navigation() {
                     </Nav>
                     <p className="text-center mt-4 mb-4">&nbsp;Sort By &nbsp;</p>
                     <Nav >
-                    <NavDropdown  title={sortHeader} id="collasible-nav-dropdown">
+                      <DropdownButton  variant="navigate"
+                      menuAlign="right"
+                      title={sortHeader}
+                      id="dropdown-menu-align-right"
+                      >
+                      {
+                           sortOptions.map(opt=>(
+                            <Dropdown.Item onSelect={handleSortKey} key={opt.value} 
+                            eventKey={opt.value}>{opt.label}</Dropdown.Item> 
+                          ))
+                      }
+
+                      </DropdownButton>
+                    {/* <NavDropdown  title={sortHeader} id="collasible-nav-dropdown">
                       {
                         sortOptions.map(opt=>(
                           <NavDropdown.Item onSelect={handleSortKey} key={opt.value} eventKey={opt.value}>{opt.label}</NavDropdown.Item> 
                         ))
                       }
-                        </NavDropdown>
+                        </NavDropdown> */}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
