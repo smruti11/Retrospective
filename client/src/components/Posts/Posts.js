@@ -1,6 +1,5 @@
 import React,{useEffect,useState,useContext} from 'react';
 import {Container, Row } from 'react-bootstrap';
-import Spinner from 'react-bootstrap/Spinner';
 import { useSelector } from 'react-redux';
 import Category from '../Category/Category';
 import {CategoryContext} from '../../context/categoryContext';

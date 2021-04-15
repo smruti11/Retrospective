@@ -1,8 +1,14 @@
 import React,{useEffect,useState} from 'react'
-import {Dropdown,Form, DropdownButton} from 'react-bootstrap'
+import {Dropdown,Form, DropdownButton, Container} from 'react-bootstrap'
 import { typeWell, typeImprove, typeDone, typeAction,typeAll } from '../../constants/categoryTypes';
 import {CustomItem} from './CustomItem';
 export const CustomDropdown = React.forwardRef(({update,selectedOptions},ref) =>{
+    //show/hide dropdown
+    const [show,setShow] = useState(false);
+    const updateShow = (val) =>{
+       // const show = val? true : false;
+        setShow(val);
+    }
     var options =[typeAll, typeWell,typeImprove,typeDone,typeAction];
      options = options.map(opt=>{ return {...opt,checked:false}})
      const [categories, setCategories] = useState(options)
@@ -19,7 +25,7 @@ export const CustomDropdown = React.forwardRef(({update,selectedOptions},ref) =>
         setCategories(arr);
      }, [selectedOptions])
      const handleMultiple = (optionClicked) =>{
-        optionClicked.checked = !optionClicked.checked;
+       // optionClicked.checked = !optionClicked.checked;
         // console.log(optionClicked)
         var replace =categories;
         var all = categories.find(obj=>(obj.value==typeAll.value));
@@ -46,7 +52,7 @@ export const CustomDropdown = React.forwardRef(({update,selectedOptions},ref) =>
                     .filter(opt=>(opt.value===typeAll.value? all :opt))
             }
         }
-        setCategories(replace)
+        // setCategories(replace)
         var selected = replace.filter(option=>(option.checked === true))
         selected.forEach(obj=>{
             delete obj.checked;
@@ -55,32 +61,34 @@ export const CustomDropdown = React.forwardRef(({update,selectedOptions},ref) =>
         update(selected);
       }
     return (
-        // <Dropdown >
-        // <Dropdown.Toggle as="a" role="button" className="nav-link" id="dropdown-basic">
-        // {selectedOptions.length>4?'View All':`${selectedOptions.length} Selected`}
-        // </Dropdown.Toggle>
+        <Dropdown alignRight={true} show={show}>
+        <Dropdown.Toggle onClick={()=>updateShow(!show)} as="button" role="button" 
+        className="btn-navigate btn" id="dropdown-basic">
+        {selectedOptions.length>4?'View All':`${selectedOptions.length} Selected`}
+        </Dropdown.Toggle>
 
-        // <Dropdown.Menu >
-        //     {
-        //     categories.map((opt,idx)=>
-        //     <Form as={CustomItem} onCheck={handleMultiple} 
-        //     key={opt.value} eventKey={idx}>{opt}</Form>)
-        //     }
-        // </Dropdown.Menu>
-        // </Dropdown>
-
-
-         <DropdownButton  variant="navigate"
-        menuAlign="right"
-        title={selectedOptions.length>4?'View All':`${selectedOptions.length} Selected`}
-        id="dropdown-menu-align-right"
-        >
-        {
+        <Dropdown.Menu >
+            {
             categories.map((opt,idx)=>
-            <Form as={CustomItem} onCheck={handleMultiple} key={opt.value} eventKey={idx}>{opt}</Form>)
-        }
+            <Dropdown.Item  as={CustomItem} updateShow={updateShow} onCheck={handleMultiple} 
+            key={opt.value} eventKey={idx}>{opt}</Dropdown.Item>
+            )
+            }
+        </Dropdown.Menu>
+        </Dropdown>
 
-        </DropdownButton>
+
+        //  <DropdownButton variant="navigate" show={show} 
+        // menuAlign="right" onClick={()=>updateShow(!show)}
+        // title={selectedOptions.length>4?'View All':`${selectedOptions.length} Selected`}
+        // id="dropdown-menu-align-right"
+        // >
+        // {
+        //     categories.map((opt,idx)=>
+        //     <Form as={CustomItem} updateShow={updateShow} onCheck={handleMultiple} key={opt.value} eventKey={idx}>{opt}</Form>)
+        // }
+
+        // </DropdownButton>
     )
 })
 

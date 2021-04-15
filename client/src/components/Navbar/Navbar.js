@@ -43,7 +43,6 @@ function Navigation() {
                 <p className="text-center mt-4 mb-4">View Section &nbsp;</p>
                     <Nav>
                       <NavDropdown as={CustomDropdown} update={updateSelectedOptions} selectedOptions={selectedOptions}></NavDropdown>
-                      {/* <CustomDropdown update={updateSelectedOptions} selectedOptions={selectedOptions} ></CustomDropdown> */}
                     </Nav>
                     <p className="text-center mt-4 mb-4">&nbsp;Sort By &nbsp;</p>
                     <Nav >
