@@ -24,10 +24,10 @@ function Category({label,posts}) {
     }
     //ascending order
     function compare( a, b ) {
-        if ( a[navigate.sorting] > b[navigate.sorting] ){
+        if ( a[navigate.sorting] < b[navigate.sorting] ){
           return -1;
         }
-        if ( a[navigate.sorting] < b[navigate.sorting] ){
+        if ( a[navigate.sorting] > b[navigate.sorting] ){
           return 1;
         }
         return 0;
